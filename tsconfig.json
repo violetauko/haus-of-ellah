@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/app/admin/products/page.js", "src/app/api/categories/route.js", "src/app/api/upload/route.js", "src/app/products/[id]/page.js", "src/app/products/cart/page.js", "src/app/products/checkout/page.js"  ],
   "exclude": ["node_modules"]
 }

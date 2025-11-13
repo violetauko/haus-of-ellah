@@ -1,65 +1,57 @@
-import { ArrowRight } from "lucide-react";
+import React from 'react';
 
-export default function AboutBrand() {
+export default function AboutSection() {
   return (
-    <section className="bg-gray-100 flex items-center justify-center px-6 py-16">
-      <div className="max-w-7xl w-full">
-        <div className="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-16">
-          {/* Left Content */}
-          <div className="flex-1 flex flex-col justify-center pt-0 lg:pt-8">
-            {/* Title */}
-            <h1 className="text-5xl lg:text-6xl font-light tracking-wide mb-8 leading-tight">
-              ABOUT BRAND
-            </h1>
-
-            {/* Description Text */}
-            <div className="space-y-5 mb-10">
-              <p className="text-gray-700 text-sm leading-relaxed max-w-sm font-light">
-                We have been collaborating with brands with love and passion for over 5 years. Developing the human studio, we pursue the goal of helping brands to grow beautifully and sustainably.
-              </p>
-              <p className="text-gray-700 text-sm leading-relaxed max-w-sm font-light">
-                We try to reshape uniquely in its kind and meet the high demands of our clients.
-              </p>
-            </div>
-
-            {/* CTA Link */}
-            <div className="flex items-center gap-4">
-              <a
-                href="#"
-                className="text-gray-900 text-xs font-medium tracking-wide hover:text-gray-600 transition-colors uppercase"
-              >
-                GET IN TOUCH
-              </a>
-              <div className="w-10 h-10 rounded-full border-2 border-gray-900 flex items-center justify-center hover:bg-gray-900 hover:text-white transition-all duration-300 flex-shrink-0">
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </div>
-          </div>
-
-          {/* Right Images - Horizontal Layout */}
-          <div className="flex-1 flex gap-6 items-end justify-end h-full min-h-64">
-            {/* First Image - Rotated/Tilted Rectangle */}
-            <div 
-              className="w-40 h-48 bg-gray-300 rounded-sm overflow-hidden shadow-md flex-shrink-0"
-              style={{transform: "rotate(-8deg)"}}
-            >
-              <img
-                src="https://images.unsplash.com/photo-1618005182384-a83a8e7b9b47?w=400&h=500&fit=crop"
-                alt="Brand showcase - plant and furniture"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Second Image - Regular rounded corners */}
-            <div className="w-44 h-56 bg-gray-300 rounded-sm overflow-hidden shadow-md flex-shrink-0">
-              <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=450&h=550&fit=crop"
-                alt="Brand showcase - person portrait"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+    <section className="relative bg-gradient-to-b from-stone-100 to-white overflow-hidden">
+       <div className="mt-5 mb-2 text-center max-w-2xl mx-auto">
+          <h3 className="text-2xl sm:text-3xl font-light text-slate-800 mb-4">
+            Handcrafted for Your Unique Style
+          </h3>
+          <p className="text-slate-600 leading-relaxed">
+            Each piece in our collection is thoughtfully designed to complement your individuality. 
+            From delicate studs to bold statement pieces, discover earrings that tell your story.
+          </p>
         </div>
+      <div className="mx-auto">
+        
+        {/* Main collage layout */}
+        <div className="relative h-[100px] sm:h-[800px] mx-auto max-w-5xl">
+          
+          {/* Left image - positioned higher, behind card */}
+          <div className="absolute top-0 left-0 w-[300px] sm:w-[380px] h-[100px] sm:h-[500px] overflow-hidden shadow-2xl z-0">
+            <img 
+              src="https://i.pinimg.com/1200x/7e/71/cc/7e71cce2f346e2c42995839f68dbf22d.jpg" 
+              alt="Elegant gold earrings"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          
+          {/* Center card - overlapping both images, on top */}
+          <div className="absolute top-[100px] sm:top-[120px] left-1/2 -translate-x-1/2 w-[340px] sm:w-[420px] bg-[#301E0B] text-white p-8 sm:p-10 shadow-2xl z-30">
+            <p className="text-[10px] uppercase tracking-[0.2em] mb-4 text-slate-300">
+              WHERE ELEGANCE MEETS ARTISTRY
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-light mb-5 leading-tight">
+              The earring collection your elegance needs.
+            </h2>
+            <p className="text-sm leading-relaxed text-slate-200 mb-8">
+              Through meticulous design and the perfect combination of timeless and statement pieces, I create earrings that let you express who you are while adding that perfect sparkle to your look. More subscribers, more sales, more beauty.
+            </p>
+          </div>
+          
+          {/* Right image - positioned lower, behind card */}
+          <div className="absolute top-[180px] sm:top-[220px] right-0 w-[300px] sm:w-[380px] h-[100px] sm:h-[500px] overflow-hidden shadow-2xl z-0">
+            <img 
+              src="https://i.pinimg.com/1200x/02/29/e7/0229e76c5bdf8b65e5f5b42b23c05a16.jpg" 
+              alt="Woman wearing statement earrings"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          
+        </div>
+
+        {/* Bottom section with additional info */}
+       
       </div>
     </section>
   );

@@ -9,13 +9,13 @@ export default function CartPage() {
   
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 py-12">
+      <div className="min-h-screen bg-stone-100 py-12">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-3xl font-bold text-amber-900 mb-4">Your Cart is Empty</h1>
           <p className="text-gray-600 mb-8">Add some beautiful earrings to your cart</p>
           <Link
             href="/products"
-            className="bg-amber-900 text-white px-8 py-3 rounded-lg font-bold hover:bg-amber-800 transition inline-block"
+            className="bg-[#301E0B] text-white px-8 py-3 rounded-lg font-bold hover:bg-amber-800 transition inline-block"
           >
             Shop Now
           </Link>
@@ -25,7 +25,7 @@ export default function CartPage() {
   }
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 py-12">
+    <div className="min-h-screen bg-stone-100 py-12">
       <div className="max-w-6xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-amber-900 mb-8">Shopping Cart</h1>
         
@@ -33,7 +33,7 @@ export default function CartPage() {
           {/* Cart Items */}
           <div className="lg:col-span-2 space-y-4">
             {items.map(item => (
-              <div key={item.id} className="bg-white rounded-lg shadow-md p-4 flex gap-4">
+              <div key={item.id} className="bg-white rounded-lg shadow-2xl p-4 flex gap-4">
                 <div className="relative w-24 h-24 flex-shrink-0">
                   <Image
                     src={item.imageUrl}
@@ -52,14 +52,14 @@ export default function CartPage() {
                   <div className="flex items-center gap-2 mt-2">
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      className="bg-amber-100 p-1 rounded hover:bg-amber-200"
+                      className="bg-[#301E0B] p-1 rounded hover:bg-amber-900"
                     >
                       <Minus size={16} />
                     </button>
-                    <span className="w-8 text-center font-semibold">{item.quantity}</span>
+                    <span className="w-8 text-center text-gray-700 font-semibold">{item.quantity}</span>
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      className="bg-amber-100 p-1 rounded hover:bg-amber-200"
+                      className="bg-[#301E0B] text-white p-1 rounded hover:bg-amber-900"
                     >
                       <Plus size={16} />
                     </button>
@@ -108,7 +108,7 @@ export default function CartPage() {
               
               <Link
                 href="/checkout"
-                className="block w-full bg-amber-900 text-white py-3 rounded-lg font-bold hover:bg-amber-800 transition text-center"
+                className="block w-full bg-[#301E0B] text-white py-3 rounded-lg font-bold hover:bg-amber-900 transition text-center"
               >
                 Proceed to Checkout
               </Link>

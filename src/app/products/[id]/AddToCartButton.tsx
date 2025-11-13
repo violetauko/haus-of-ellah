@@ -41,14 +41,14 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
   }
   
   return (
-    <div className="space-y-3">
+    <div className=" flex justify-between gap-4">
       {/* Add to Cart Button */}
       <button
         onClick={handleAddToCart}
-        className={`w-full py-4 rounded-lg font-bold transition flex items-center justify-center space-x-2 ${
+        className={`w-full py-4 rounded-lg font-bold transition flex items-center justify-center  ${
           justAdded
             ? 'bg-green-600 text-white'
-            : 'bg-amber-900 text-white hover:bg-amber-800'
+            : 'bg-[#301E0B] text-white hover:bg-amber-800'
         }`}
       >
         <ShoppingCart size={24} />
@@ -58,7 +58,7 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
       {/* Buy Now Button */}
       <button
         onClick={handleBuyNow}
-        className="w-full bg-green-600 text-white py-4 rounded-lg font-bold hover:bg-green-700 transition flex items-center justify-center space-x-2"
+        className="w-full border-2 text-black hover:bg-stone-100  py-4 rounded-lg font-bold  transition flex items-center justify-center space-x-2"
       >
         <ShoppingBag size={24} />
         <span>Buy Now</span>

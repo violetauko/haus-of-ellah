@@ -1,38 +1,20 @@
-'use client';
 
-import Link from 'next/link';
-import { Sparkles, Package, Shield, Truck } from 'lucide-react';
-import ProductCard from '@/components/ProductCard';
-import { prisma } from '@/lib/prisma';
-import { Product, Category } from '@prisma/client';
 import AboutBrand from '@/components/AboutBrand';
 import FeatureCard from '@/components/FeatureCard';
+import FeaturedProducts from '@/components/FeatureProducts';
 import FeaturesSection from '@/components/FeaturesSection';
 import HeroSection from '@/components/HeroSection';
 import JewelryCollection from '@/components/JewelryCollection';
 import Navbar from '@/components/Navbar';
 import RefinementSection from '@/components/RefinementSection';
 
-//  Define the product type with its relations
-type ProductWithCategory = Product & {
-  category: Category;
-};
-
-async function getFeaturedProducts() {
-  return await prisma.product.findMany({
-    take: 6,
-    include: { category: true },
-    orderBy: { createdAt: 'desc' }
-  });
-}
-
-export default async function Home() {
-  const products = await getFeaturedProducts();
+export default function Home() {
+ 
   return (
     <div
       className="h-screen w-full bg-cover bg-center relative"
       style={{
-        backgroundImage: `url('/images/background_hero.webp')`,
+        backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%), url('/images/background_hero.webp')`,
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center right',
         backgroundSize: 'cover',
@@ -77,31 +59,11 @@ export default async function Home() {
         </div>
       </div>
       <FeaturesSection />
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-amber-900 mb-8 text-center">
-            Featured Collections
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {products.map((product: ProductWithCategory) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/products"
-              className="bg-amber-900 text-white px-8 py-3 rounded-lg font-bold hover:bg-amber-800 transition inline-block"
-            >
-              View All Products
-            </Link>
-          </div>
-        </div>
-      </section>
+      <AboutBrand />
+      <FeaturedProducts/>
       <RefinementSection />
       <JewelryCollection />
-      <AboutBrand />
+      
     </div>
   );
 }

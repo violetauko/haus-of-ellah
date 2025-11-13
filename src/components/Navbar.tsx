@@ -1,7 +1,13 @@
+"use client";
 
+import { ShoppingCart } from 'lucide-react';
+import Link from 'next/link';
+import { useCart } from '@/lib/store';
 import React from 'react';
 
 export default function Navbar() {
+   const items = useCart(state => state.items);
+  const itemCount = items.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6">
@@ -30,6 +36,21 @@ export default function Navbar() {
         <button className="bg-amber-900 text-primary-brown px-6 py-2 rounded-full font-semibold text-sm ml-2 hover:bg-off-white transition shadow-md">
           Contact Us
         </button>
+         <Link 
+              href="/cart" 
+              className="relative p-2 hover:bg-amber-700 rounded-lg transition"
+              aria-label={`Shopping cart with ${itemCount} items`}
+            >
+              <ShoppingCart className="h-6 w-6" strokeWidth={2} />
+              {itemCount > 0 && (
+                <span 
+                  className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center border-2 border-amber-900"
+                  style={{ minWidth: '20px' }}
+                >
+                  {itemCount > 99 ? '99+' : itemCount}
+                </span>
+              )}
+            </Link>
       </div>
     </nav>
   );

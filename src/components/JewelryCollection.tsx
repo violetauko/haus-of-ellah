@@ -5,41 +5,33 @@ export default function JewelryCollection() {
   const products = [
     {
       id: 1,
-      name: 'Gold Earring',
-      price: '$240.00',
-      image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop'
+      name: 'Round Earring',
+      image: 'https://i.pinimg.com/1200x/16/60/39/1660393c2527a4e6cb9ad3a3be81ed64.jpg'
     },
     {
       id: 2,
-      name: 'Diamond Ring',
-      price: '$240.00',
-      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=400&fit=crop'
+      name: 'Flower Earrings',
+      image: 'https://i.pinimg.com/736x/c8/96/0b/c8960bf0d75b5399e524e80f425683f9.jpg'
     },
     {
       id: 3,
-      name: 'Gold Necklace',
-      price: '$240.00',
-      image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop'
+      name: 'Stud Earrings',
+      image: 'https://i.pinimg.com/736x/8f/cd/96/8fcd9613cf3e231b04379b42f23c071f.jpg'
     }
   ];
-
   return (
-    <div className="bg-gradient-to-br from-pink-50 via-white to-pink-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#301E0B] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="bg-pink-50/50 rounded-3xl p-12">
+          <div className="bg-stone-100 rounded-3xl p-12">
             <h2 className="text-5xl font-serif mb-6 text-gray-900">
               Our Collection
             </h2>
             <p className="text-gray-600 leading-relaxed mb-8 max-w-md">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Discover our exquisite collection of handcrafted earrings, where timeless elegance meets contemporary design. Each piece is carefully selected to complement your unique style, from delicate studs perfect for everyday wear to statement pieces that capture attention. Crafted with premium materials and meticulous attention to detail, our earrings are designed to become cherished additions to your jewelry collection.
             </p>
-            <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-colors duration-300 font-medium">
-              See More
-            </button>
           </div>
-
           {/* Right Content - Product Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {products.map((product) => (
@@ -50,16 +42,15 @@ export default function JewelryCollection() {
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <button className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-pink-50 transition-colors duration-300">
-                    <Heart className="w-5 h-5 text-gray-700" />
-                  </button>
                 </div>
-                <h3 className="text-lg font-serif text-gray-900 mb-2">
+                <h3 className="text-lg font-serif text-stone-50 mb-3">
                   {product.name}
                 </h3>
-                <p className="text-gray-600 font-medium">
-                  {product.price}
-                </p>
+                <a href="/products">
+                  <button className="w-full px-4 py-2 border-2 text-stone-200 rounded-full font-medium hover:bg-stone-50 hover:text-amber-900 transition-colors duration-300">
+                    View 
+                  </button>
+                </a>
               </div>
             ))}
           </div>

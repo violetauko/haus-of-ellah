@@ -101,7 +101,7 @@ export default function CheckoutPage() {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 py-12">
+    <div className="min-h-screen bg-stone-100 py-12">
       <div className="max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-amber-900 mb-8">Checkout</h1>
         
@@ -144,39 +144,15 @@ export default function CheckoutPage() {
             </div>
           </div>
         </div>
-        
-        <div className="bg-amber-50 rounded-lg shadow-md p-6 mb-6 border-2 border-amber-200">
-          <h2 className="text-xl font-bold text-amber-900 mb-4">Checkout via WhatsApp</h2>
-          <p className="text-gray-700 mb-4">
-            Click one of the buttons below to complete your order via WhatsApp.
-          </p>
-          
-          <div className="space-y-3">
-            
             
             {/* Option 2: Text Only */}
             <button
               onClick={handleWhatsAppOrder}
-              className="w-full bg-amber-900 text-white py-4 rounded-lg font-bold hover:bg-amber-800 transition flex items-center justify-center space-x-3"
+              className="w-full bg-[#301E0B] text-white py-4 rounded-lg font-bold hover:bg-amber-800 transition flex items-center justify-center space-x-3"
             >
               <MessageCircle size={24} />
-              <span>Order </span>
+              <span>Place Order </span>
             </button>
-          
-          </div>
-        </div>
-        
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="font-bold text-amber-900 mb-3">What happens next?</h3>
-          <ol className="space-y-2 text-gray-700">
-            <li>1. Images will be downloaded to your device (if selected)</li>
-            <li>2. You'll be redirected to WhatsApp with your order details</li>
-            <li>3. Attach the downloaded images to your message (optional)</li>
-            <li>4. Our team will confirm product availability</li>
-            <li>5. We'll arrange delivery details with you</li>
-            <li>6. Payment can be made upon delivery or via M-Pesa</li>
-          </ol>
-        </div>
       </div>
     </div>
   );

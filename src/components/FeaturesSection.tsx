@@ -1,6 +1,4 @@
-'use client';
 
-import React from 'react';
 
 interface Feature {
   icon: string;
@@ -33,7 +31,7 @@ const features: Feature[] = [
 
 export default function FeaturesSection() {
   return (
-    <section className="w-full py-16 md:py-24">
+    <section className="w-full py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
@@ -45,7 +43,7 @@ export default function FeaturesSection() {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg md:text-base font-semibold text-primary-brown mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h3 className="text-lg md:text-base font-semibold text-black mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
                 {feature.title}
               </h3>
 

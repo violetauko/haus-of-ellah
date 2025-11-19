@@ -5,7 +5,7 @@ export default function JewelryCollection() {
   const products = [
     {
       id: 1,
-      name: 'Round Earring',
+      name: 'Round Earring.',
       image: 'https://i.pinimg.com/1200x/16/60/39/1660393c2527a4e6cb9ad3a3be81ed64.jpg'
     },
     {

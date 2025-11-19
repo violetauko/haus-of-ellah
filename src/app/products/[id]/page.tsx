@@ -41,7 +41,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         <nav className="text-xs text-gray-500 mb-8 flex items-center gap-2">
           <a href="/" className="hover:text-gray-700">HOME</a>
           <span>/</span>
-          <a href="/jewelry" className="hover:text-gray-700">JEWELRY</a>
+          <a href="/products" className="hover:text-gray-700">PRODUCTS</a>
           <span>/</span>
           <a href={`/category/${product.category.id}`} className="hover:text-gray-700">
             {product.category.name.toUpperCase()}
@@ -153,10 +153,6 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                 <li className="flex items-start gap-2">
                   <span className="text-amber-600 mt-1">•</span>
                   <span>Compatible with all charm bracelets</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-amber-600 mt-1">•</span>
-                  <span>Comes with signature gift packaging</span>
                 </li>
               </ul>
             </div>

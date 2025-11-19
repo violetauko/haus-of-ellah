@@ -1,11 +1,18 @@
+import Image from "next/image";
 
 
 export default function FeatureCard() {
   return (
-    <div className="flex items-center justify-center space-x-2 bg-white/80 backdrop-blur-xl rounded-3xl p-2 border border-white/30 shadow-2xl">
+    <div className="flex items-center justify-center space-x-2 bg-stone-50 backdrop-blur-xl rounded-3xl p-2 border border-white/30 shadow-2xl">
       <div className="w-full h-32 bg-linear-to-br from-yellow-100/40 to-yellow-200/40 rounded-lg flex items-center justify-center border border-white/20">
         <div className="text-center">
-          <span className="text-5xl">💍</span>
+          <Image
+            src="/images/E2.jpeg"
+            alt="Feature Card Image"
+            width={140}
+            height={80}
+            className="object-contain mx-auto"
+          />
         </div>
       </div>
 

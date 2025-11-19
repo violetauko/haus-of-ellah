@@ -117,23 +117,23 @@ export default function ManageCategoriesPage() {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 py-12">
+    <div className="min-h-screen bg-stone-100 py-12">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-4">
             <Link
               href="/admin/dashboard"
-              className="text-amber-900 hover:text-amber-700"
+              className="text-[#301E0B] hover:text-amber-900"
             >
               <ArrowLeft size={24} />
             </Link>
-            <h1 className="text-4xl font-bold text-amber-900">Manage Categories</h1>
+            <h1 className="text-4xl font-bold text-[#301E0B]">Manage Categories</h1>
           </div>
           
           {!showForm && (
             <button
               onClick={() => setShowForm(true)}
-              className="bg-amber-900 text-white px-6 py-3 rounded-lg font-bold hover:bg-amber-800 transition flex items-center space-x-2"
+              className="bg-[#301E0B] text-white px-6 py-3 rounded-lg font-bold hover:bg-amber-900 transition flex items-center space-x-2"
             >
               <Plus size={20} />
               <span>Add New Category</span>
@@ -143,13 +143,13 @@ export default function ManageCategoriesPage() {
         
         {showForm && (
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-xl font-bold text-amber-900 mb-4">
+            <h2 className="text-xl font-bold text-[#301E0B] mb-4">
               {editingId ? 'Edit Category' : 'Add New Category'}
             </h2>
             
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
-                <label className="block text-amber-900 font-semibold mb-2">
+                <label className="block text-[#301E0B] font-semibold mb-2">
                   Category Name
                 </label>
                 <input
@@ -163,7 +163,7 @@ export default function ManageCategoriesPage() {
               </div>
               
               <div className="mb-6">
-                <label className="block text-amber-900 font-semibold mb-2">
+                <label className="block text-[#301E0B] font-semibold mb-2">
                   Slug (URL-friendly)
                 </label>
                 <input
@@ -179,7 +179,7 @@ export default function ManageCategoriesPage() {
               <div className="flex gap-4">
                 <button
                   type="submit"
-                  className="flex-1 bg-amber-900 text-white py-3 rounded-lg font-bold hover:bg-amber-800 transition"
+                  className="flex-1 bg-[#301E0B] text-white py-3 rounded-lg font-bold hover:bg-amber-900 transition"
                 >
                   {editingId ? 'Update Category' : 'Create Category'}
                 </button>
@@ -197,7 +197,7 @@ export default function ManageCategoriesPage() {
         
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <table className="w-full">
-            <thead className="bg-amber-900 text-white">
+            <thead className="bg-[#301E0B] text-white">
               <tr>
                 <th className="px-6 py-3 text-left">Name</th>
                 <th className="px-6 py-3 text-left">Slug</th>

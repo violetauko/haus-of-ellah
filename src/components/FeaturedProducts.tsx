@@ -49,11 +49,6 @@ export default async function FeaturedProducts() {
                 {product.name}
               </h3>
 
-              {/* Description - Centered, Small */}
-              <p className="text-center text-xs text-slate-600 mb-3 px-2 flex-grow">
-                {product.description}
-              </p>
-
               {/* Price - Centered */}
               <p className="text-center text-sm font-medium text-slate-800 mb-4">
                 Ksh.{product.price}

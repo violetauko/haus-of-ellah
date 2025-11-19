@@ -23,7 +23,7 @@ model Product {
   description String?
   price       Float
   imageUrl    String
-  category    Category @relation(fields: [categoryId], references: [id])
+  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   categoryId  String
   inStock     Boolean  @default(true)
   createdAt   DateTime @default(now())

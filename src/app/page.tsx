@@ -1,7 +1,7 @@
 
 import AboutBrand from '@/components/AboutBrand';
 import FeatureCard from '@/components/FeatureCard';
-import FeaturedProducts from '@/components/FeatureProducts';
+import FeaturedProducts from '@/components/FeaturedProducts';
 import FeaturesSection from '@/components/FeaturesSection';
 import HeroSection from '@/components/HeroSection';
 import JewelryCollection from '@/components/JewelryCollection';
@@ -14,7 +14,7 @@ export default function Home() {
     <div
       className="h-screen w-full bg-cover bg-center relative"
       style={{
-        backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%), url('/images/background_hero.webp')`,
+        backgroundImage: `url('/images/background_hero.webp')`,
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center right',
         backgroundSize: 'cover',
@@ -28,14 +28,14 @@ export default function Home() {
 
           {/* Main Content Container */}
           <div className="h-full flex items-center pt-20 px-10">
-            <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+            <div className="w-full h-full flex">
               {/* Left Section - Hero Content */}
-              <div className="flex items-center pt-20 lg:pt-0">
+              <div className="w-1/2 h-full pb-20 lg:pt-0">
                 <HeroSection />
               </div>
 
               {/* Right Section - Glassmorphism Container with Client Testimonial and Feature Card */}
-              <div className="h-full flex items-end justify-end lg:pt-0 ">
+              <div className="w-1/2 h-full flex items-end justify-end lg:pt-0">
                 <div className="relative w-full max-w-md">
                   <div className="">
                     {/* Client Testimonial Section */}

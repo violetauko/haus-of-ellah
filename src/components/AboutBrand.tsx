@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AboutSection() {
   return (
-    <section className="relative bg-gradient-to-b from-stone-100 to-white overflow-hidden">
+    <section id='about' className="relative bg-gradient-to-b from-stone-100 to-white overflow-hidden">
        <div className="mt-5 mb-2 text-center max-w-2xl mx-auto">
           <h3 className="text-2xl sm:text-3xl font-light text-slate-800 mb-4">
             Handcrafted for Your Unique Style

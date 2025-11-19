@@ -3,58 +3,54 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingCart } from 'lucide-react';
 import { useCart } from '@/lib/store';
+import { Product } from '@/lib/types';
 
-export default function ProductCard({ product }) {
+
+export default function ProductCard({ product }: { product: Product }) {
   const addItem = useCart(state => state.addItem);
-
-  const handleAddToCart = (e) => {
+  
+  const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     addItem(product);
   };
 
   return (
-    <div className="group cursor-pointer">
+    <section className="">
       <Link href={`/products/${product.id}`}>
-        <div className="bg-[#F5EBE1] hover:shadow-lg transition-shadow pb-3">
-          {/* Image Container */}
-          <div className="relative aspect-square overflow-hidden">
-            <Image
-              src={product.imageUrl}
-              alt={product.name}
-              fill
-              className="object-contain p-6"
-            />
-            
-            {/* Out of Stock Overlay */}
-            {!product.inStock && (
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                <span className="text-white font-semibold text-xs">Out of Stock</span>
+        
+        {/* Products Grid */}
+        <div className="">
+              {/* Rounded Image Container */}
+              <div className="relative h-56 bg-stone-200 rounded-3xl overflow-hidden mb-4">
+                <Image
+                  src={product.imageUrl || '/placeholder-earring.jpg'}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                />
               </div>
-            )}
-          </div>
 
-          {/* Product Info - Inside the same card */}
-          <div className="text-center px-3 pt-2">
-            <h3 className="text-gray-700 text-[11px] mb-1 line-clamp-2 leading-tight">
-              {product.name}
-            </h3>
-            <p className="text-gray-900 font-semibold text-xs">
-              KSh {product.price.toLocaleString()}
-            </p>
-          </div>
+              {/* Product Name - Centered, Uppercase */}
+              <h3 className="text-center text-xs uppercase tracking-widest text-slate-800 font-medium mb-3">
+                {product.name}
+              </h3>
+
+              {/* Price - Centered */}
+              <p className="text-center text-sm font-medium text-slate-800 mb-4">
+                Ksh.{product.price}
+              </p>
         </div>
       </Link>
-
-      {/* Add to Cart Button */}
-      {product.inStock && (
+       {/* Add to Cart Button */}
+    //   {product.inStock && (
         <button
           onClick={handleAddToCart}
-          className="mt-2 w-full bg-[#301E0B] text-white py-1.5 text-[10px] font-medium hover:bg-amber-800 transition flex items-center justify-center gap-1.5"
+          className="mt-2 w-full bg-[#301E0B] text-white py-3 text-[10px] font-medium hover:bg-amber-800 transition flex items-center justify-center gap-1.5"
         >
           <ShoppingCart size={12} />
           <span>ADD TO CART</span>
         </button>
       )}
-    </div>
+    </section>
   );
 }

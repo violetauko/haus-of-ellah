@@ -3,48 +3,54 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await context.params; // must await params
+
+  const body = await request.json();
+  const { name, slug } = body;
+
   try {
-    const body = await request.json();
-    const { name, slug } = body;
-    
     const category = await prisma.category.update({
-      where: { id: params.id },
-      data: { name, slug }
+      where: { id },
+      data: { name, slug },
     });
-    
+
     return NextResponse.json(category);
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : 'Unknown error' },
+      { status: 500 }
+    );
   }
 }
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await context.params;
+
   try {
     const category = await prisma.category.findUnique({
-      where: { id: params.id },
-      include: { _count: { select: { products: true } } }
+      where: { id },
+      include: { _count: { select: { products: true } } },
     });
-    
+
     if (category && category._count.products > 0) {
       return NextResponse.json(
         { error: 'Cannot delete category with products. Please delete or reassign products first.' },
         { status: 400 }
       );
     }
-    
-    await prisma.category.delete({
-      where: { id: params.id }
-    });
-    
+
+    await prisma.category.delete({ where: { id } });
+
     return NextResponse.json({ success: true });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : 'Unknown error' },
+      { status: 500 }
+    );
   }
 }

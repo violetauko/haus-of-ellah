@@ -12,25 +12,10 @@ async function getProduct(id: string) {
   return product;
 }
 
-// export async function generateStaticParams() {
-//   const products = await prisma.product.findMany({
-//     select: { id: true }
-//   });
-//   return products.map((product) => ({
-//     id: product.id,
-//   }));
-// }
-
 export async function generateStaticParams() {
-  // Skip database access during Vercel build
-  if (!process.env.DATABASE_URL) {
-    return [];
-  }
-
   const products = await prisma.product.findMany({
     select: { id: true }
   });
-  
   return products.map((product) => ({
     id: product.id,
   }));

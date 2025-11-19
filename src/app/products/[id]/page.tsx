@@ -11,7 +11,7 @@ async function getProduct(id: string) {
   });
   return product;
 }
-
+//dcomment
 export async function generateStaticParams() {
   const products = await prisma.product.findMany({
     select: { id: true }

@@ -11,7 +11,7 @@ type ProductWithCategory = Product & {
 
 async function getFeaturedProducts() {
   return await prisma.product.findMany({
-    take: 4,
+    take: 8,
     include: { category: true },
     orderBy: { createdAt: 'desc' }
   });
@@ -25,7 +25,7 @@ export default async function FeaturedProducts() {
       <h2 className="text-4xl text-center font-serif mb-6 text-gray-900">
               Spotlight Selections
             </h2>
-      <div className="max-w-5xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">

@@ -45,7 +45,7 @@ export default function ProductCard({ product }: { product: Product }) {
     //   {product.inStock && (
         <button
           onClick={handleAddToCart}
-          className="mt-2 w-full bg-[#301E0B] text-white py-3 text-[10px] font-medium hover:bg-amber-800 transition flex items-center justify-center gap-1.5"
+          className="mt-1 w-full bg-[#301E0B] text-white py-3 text-[10px] font-medium hover:bg-amber-800 transition flex items-center justify-center gap-1.5"
         >
           <ShoppingCart size={12} />
           <span>ADD TO CART</span>

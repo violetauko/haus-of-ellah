@@ -55,7 +55,7 @@ export default function CheckoutPage() {
   };
   
   const handleWhatsAppOrder = () => {
-    let whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '254712345678';
+    let whatsappNumber = '254728636956' // Replace with your business WhatsApp number
     
     whatsappNumber = whatsappNumber.replace(/[\s\-+]/g, '');
     
